@@ -1,0 +1,220 @@
+/* VoteCampus : style personnalise (par-dessus Bootstrap 5) */
+
+:root {
+  --vc-navy: #1b4f8f;        /* bleu neutre */
+  --vc-teal: #1e9e55;        /* vert */
+  --vc-teal-dark: #167a41;
+  --vc-mint: #e8f6ec;        /* fond doux */
+  --vc-bg: #f7faf8;
+  --vc-text: #1e2b37;
+  --vc-muted: #6b7c8a;
+  --vc-red: #c62839;         /* accent rouge */
+  --vc-radius: 14px;
+
+  --bs-primary: var(--vc-teal);
+  --bs-primary-rgb: 30, 158, 85;
+  --bs-link-color: var(--vc-teal-dark);
+  --bs-link-hover-color: var(--vc-navy);
+}
+
+body {
+  background-color: var(--vc-bg);
+  color: var(--vc-text);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+}
+
+/* Barre de navigation */
+.navbar-vc {
+  background: var(--vc-navy);
+  border-bottom: 3px solid var(--vc-red);
+}
+.navbar-vc .navbar-brand {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+.navbar-vc .navbar-brand span {
+  color: #7be0a0;
+}
+.navbar-vc .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+}
+.navbar-vc .nav-link:hover {
+  color: #fff;
+}
+
+/* Boutons */
+.btn-primary {
+  --bs-btn-bg: var(--vc-teal);
+  --bs-btn-border-color: var(--vc-teal);
+  --bs-btn-hover-bg: var(--vc-teal-dark);
+  --bs-btn-hover-border-color: var(--vc-teal-dark);
+  --bs-btn-active-bg: var(--vc-teal-dark);
+  --bs-btn-active-border-color: var(--vc-teal-dark);
+  --bs-btn-disabled-bg: var(--vc-teal);
+  --bs-btn-disabled-border-color: var(--vc-teal);
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--vc-teal-dark);
+  --bs-btn-border-color: var(--vc-teal);
+  --bs-btn-hover-bg: var(--vc-teal);
+  --bs-btn-hover-border-color: var(--vc-teal);
+  --bs-btn-active-bg: var(--vc-teal-dark);
+  --bs-btn-active-border-color: var(--vc-teal-dark);
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* Champs de formulaire */
+.form-control,
+.form-select {
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  border-color: #d5e2e6;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--vc-teal);
+  box-shadow: 0 0 0 0.2rem rgba(30, 158, 85, 0.25);
+}
+.form-label {
+  font-weight: 600;
+  color: var(--vc-navy);
+}
+
+/* Cartes */
+.card-vc {
+  background: #fff;
+  border: 0;
+  border-radius: var(--vc-radius);
+  box-shadow: 0 6px 24px rgba(27, 79, 143, 0.10);
+}
+
+/* Pages inscription / connexion */
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, var(--vc-mint) 0%, #ffffff 60%);
+}
+.auth-card {
+  width: 100%;
+  max-width: 520px;
+  padding: 2rem;
+}
+.auth-logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--vc-navy);
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+.auth-logo span {
+  color: var(--vc-teal);
+}
+.auth-subtitle {
+  text-align: center;
+  color: var(--vc-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Badges et titres */
+.badge-vc {
+  background: var(--vc-mint);
+  color: var(--vc-teal-dark);
+  font-weight: 600;
+}
+.titre-page {
+  color: var(--vc-navy);
+  font-weight: 700;
+}
+
+/* Pied de page */
+.footer-vc {
+  color: var(--vc-muted);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+/* Accent rouge : suppression, erreurs, actions sensibles */
+.btn-danger {
+  --bs-btn-bg: var(--vc-red);
+  --bs-btn-border-color: var(--vc-red);
+  --bs-btn-hover-bg: #a51f2d;
+  --bs-btn-hover-border-color: #a51f2d;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.btn-outline-danger {
+  --bs-btn-color: var(--vc-red);
+  --bs-btn-border-color: var(--vc-red);
+  --bs-btn-hover-bg: var(--vc-red);
+  --bs-btn-hover-border-color: var(--vc-red);
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* Bande tricolore rouge / vert / bleu en haut des cartes d'authentification */
+.auth-card {
+  position: relative;
+  overflow: hidden;
+}
+.auth-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--vc-red) 0 33.33%, var(--vc-teal) 33.33% 66.66%, var(--vc-navy) 66.66% 100%);
+}
+
+/* Cartes d'elections (tableau de bord) */
+.election-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+.election-image-vide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--vc-mint) 0%, #dbe8f5 100%);
+  color: var(--vc-navy);
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+/* Recadrage d'image (creation d'election) */
+.crop-frame {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #e9eef2;
+  border: 2px solid var(--vc-teal);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+.crop-frame.is-dragging {
+  cursor: grabbing;
+}
+.crop-frame img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  transform-origin: 0 0;
+  pointer-events: none;
+  user-select: none;
+}
