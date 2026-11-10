@@ -4,7 +4,7 @@ exiger_connexion();
 
 $utilisateur = utilisateur_courant($pdo);
 
-// Si le hhh compte a ete supprime entre-temps, on deconnecte
+// Si le compte a ete supprime entre-temps, on deconnecte
 if (!$utilisateur) {
     rediriger('/auth/deconnexion.php');
 }
